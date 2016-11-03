@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DataBindings_demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Lfh-EH-RKU">
+                                <segments>
+                                    <segment title="Use buttons"/>
+                                    <segment title="Use text field"/>
+                                </segments>
+                                <connections>
+                                    <action selector="stateChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="EzG-I4-WBi"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VOX-rx-7rD">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Jdy-wf-6sR"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4T-vJ-pGX">
+                                <state key="normal" title="Hello"/>
+                                <connections>
+                                    <action selector="greetingsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eMc-Kr-IYt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ei-TW-ngo">
+                                <state key="normal" title="Hi"/>
+                                <connections>
+                                    <action selector="greetingsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pUq-xp-3CM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Div-vd-rzj">
+                                <state key="normal" title="Whaddup"/>
+                                <connections>
+                                    <action selector="greetingsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xWz-3f-hhy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHd-O2-o4b">
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom greeting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Fc-Za-7rc">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Predefined greetings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xle-HV-HbW">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWH-Wv-IHt">
+                                <state key="normal" title="Hey"/>
+                                <connections>
+                                    <action selector="greetingsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pln-D7-0qZ"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="John" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Hdn-AP-CVB">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="K9c-O4-g7c"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9X-lJ-z1y">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Hdn-AP-CVB" firstAttribute="leading" secondItem="k9X-lJ-z1y" secondAttribute="leading" id="1n1-TT-cdk"/>
+                            <constraint firstItem="y4T-vJ-pGX" firstAttribute="top" secondItem="Xle-HV-HbW" secondAttribute="bottom" constant="7" id="3bP-AK-Hse"/>
+                            <constraint firstItem="MWH-Wv-IHt" firstAttribute="leading" secondItem="9Ei-TW-ngo" secondAttribute="trailing" constant="20" id="5oe-Ah-gtZ"/>
+                            <constraint firstItem="HHd-O2-o4b" firstAttribute="leading" secondItem="Lfh-EH-RKU" secondAttribute="trailing" constant="-343" id="82Z-Yk-ReV"/>
+                            <constraint firstItem="Xle-HV-HbW" firstAttribute="leading" secondItem="VOX-rx-7rD" secondAttribute="leading" id="9Py-zp-OFf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HHd-O2-o4b" secondAttribute="trailing" constant="-5" id="Cw5-HJ-Sfh"/>
+                            <constraint firstItem="VOX-rx-7rD" firstAttribute="top" secondItem="5Fc-Za-7rc" secondAttribute="bottom" constant="8" id="H3W-77-eUB"/>
+                            <constraint firstItem="Div-vd-rzj" firstAttribute="centerY" secondItem="y4T-vJ-pGX" secondAttribute="centerY" id="Iag-du-HBt"/>
+                            <constraint firstItem="Hdn-AP-CVB" firstAttribute="trailing" secondItem="Lfh-EH-RKU" secondAttribute="trailing" id="NIf-BW-xfB"/>
+                            <constraint firstItem="k9X-lJ-z1y" firstAttribute="top" secondItem="y4T-vJ-pGX" secondAttribute="bottom" constant="38" id="RMs-sY-JcG"/>
+                            <constraint firstItem="Div-vd-rzj" firstAttribute="leading" secondItem="MWH-Wv-IHt" secondAttribute="trailing" constant="20" id="Rjn-yL-ML9"/>
+                            <constraint firstItem="9Ei-TW-ngo" firstAttribute="leading" secondItem="y4T-vJ-pGX" secondAttribute="trailing" constant="20" id="TSs-LI-OvL"/>
+                            <constraint firstItem="k9X-lJ-z1y" firstAttribute="leading" secondItem="Lfh-EH-RKU" secondAttribute="leading" id="UCg-dj-hLd"/>
+                            <constraint firstItem="HHd-O2-o4b" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="UQz-v8-IIN"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Lfh-EH-RKU" secondAttribute="leading" id="VEy-cy-mQd"/>
+                            <constraint firstItem="5Fc-Za-7rc" firstAttribute="top" secondItem="Lfh-EH-RKU" secondAttribute="bottom" constant="52" id="X53-Tc-vU4"/>
+                            <constraint firstItem="Div-vd-rzj" firstAttribute="centerY" secondItem="MWH-Wv-IHt" secondAttribute="centerY" id="XyI-8z-MRz"/>
+                            <constraint firstItem="9Ei-TW-ngo" firstAttribute="centerY" secondItem="y4T-vJ-pGX" secondAttribute="centerY" id="agj-Zd-Eg0"/>
+                            <constraint firstItem="y4T-vJ-pGX" firstAttribute="leading" secondItem="Xle-HV-HbW" secondAttribute="leading" id="eQJ-y8-pio"/>
+                            <constraint firstItem="Lfh-EH-RKU" firstAttribute="top" secondItem="HHd-O2-o4b" secondAttribute="bottom" constant="29" id="ef1-K5-Ru5"/>
+                            <constraint firstItem="VOX-rx-7rD" firstAttribute="trailing" secondItem="Lfh-EH-RKU" secondAttribute="trailing" id="gHW-SF-WqO"/>
+                            <constraint firstItem="5Fc-Za-7rc" firstAttribute="leading" secondItem="Lfh-EH-RKU" secondAttribute="leading" id="kfJ-WN-PPU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Lfh-EH-RKU" secondAttribute="trailing" id="lvJ-Qx-B49"/>
+                            <constraint firstItem="MWH-Wv-IHt" firstAttribute="centerY" secondItem="9Ei-TW-ngo" secondAttribute="centerY" id="mrb-72-RuI"/>
+                            <constraint firstItem="Xle-HV-HbW" firstAttribute="top" secondItem="VOX-rx-7rD" secondAttribute="bottom" constant="36.5" id="n5q-id-2hY"/>
+                            <constraint firstItem="MWH-Wv-IHt" firstAttribute="centerY" secondItem="y4T-vJ-pGX" secondAttribute="centerY" id="qJA-Ld-C2I"/>
+                            <constraint firstItem="VOX-rx-7rD" firstAttribute="leading" secondItem="5Fc-Za-7rc" secondAttribute="leading" id="uy0-1H-4Ks"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="HHd-O2-o4b" secondAttribute="leading" id="wjA-mZ-Szz"/>
+                            <constraint firstItem="Hdn-AP-CVB" firstAttribute="top" secondItem="k9X-lJ-z1y" secondAttribute="bottom" constant="8" id="xrC-em-jEw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="greetingsLabel" destination="HHd-O2-o4b" id="MlN-cn-0MX"/>
+                        <outlet property="greetingsTextField" destination="VOX-rx-7rD" id="H9Z-4l-UZC"/>
+                        <outlet property="nameTextField" destination="Hdn-AP-CVB" id="8dB-T0-J4m"/>
+                        <outlet property="stateSegmentedControl" destination="Lfh-EH-RKU" id="Omh-4t-uPu"/>
+                        <outletCollection property="greetingButtons" destination="y4T-vJ-pGX" collectionClass="NSMutableArray" id="XKS-i3-wEi"/>
+                        <outletCollection property="greetingButtons" destination="9Ei-TW-ngo" collectionClass="NSMutableArray" id="jU1-GJ-pCs"/>
+                        <outletCollection property="greetingButtons" destination="MWH-Wv-IHt" collectionClass="NSMutableArray" id="W6V-eP-wLM"/>
+                        <outletCollection property="greetingButtons" destination="Div-vd-rzj" collectionClass="NSMutableArray" id="qrN-4g-rQ2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-81" y="37"/>
+        </scene>
+    </scenes>
+</document>
