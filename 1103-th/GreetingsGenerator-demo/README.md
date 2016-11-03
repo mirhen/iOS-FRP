@@ -2,8 +2,11 @@
 
 Let's build a small, one-viewcontroller app that let's us generate and display a greeting for a person that is composed of
 
-1. either a _custom greeting_ or a _predefined greeting_ 
-2. the _name of that person_
+1. a greeting (either _custom_ or _predefined_), e.g. `Hello`
+2. the _name_ of the person to greet, e.g. `John`
+
+![Predefined greeting by using buttons](predefined.png "Predefined greeting by using buttons")
+![Custom greeting defined through text in text field](custom.png "Custom greeting defined through text in text field")
 
 
 The UI is composed of the following elements:
