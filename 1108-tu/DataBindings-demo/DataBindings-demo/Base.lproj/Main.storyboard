@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DataBindings_demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPZ-uk-i6k">
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Johnny" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mra-3V-8OG">
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vsh-6j-Wb4">
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEl-ju-iOK">
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHS-XL-Swb">
+                                <state key="normal" title="Change name"/>
+                                <connections>
+                                    <action selector="changeNameButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cAe-dw-TeN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nx-zr-0bU">
+                                <state key="normal" title="Change age"/>
+                                <connections>
+                                    <action selector="changeAgeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d3Z-8g-2tp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Mra-3V-8OG" firstAttribute="leading" secondItem="FPZ-uk-i6k" secondAttribute="leading" id="69Y-Sr-tA3"/>
+                            <constraint firstItem="FPZ-uk-i6k" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="23" id="ANM-2i-jdE"/>
+                            <constraint firstItem="8Nx-zr-0bU" firstAttribute="trailing" secondItem="FHS-XL-Swb" secondAttribute="trailing" id="Cbh-hC-l32"/>
+                            <constraint firstItem="yEl-ju-iOK" firstAttribute="leading" secondItem="Vsh-6j-Wb4" secondAttribute="leading" id="GDh-cN-1yh"/>
+                            <constraint firstItem="FHS-XL-Swb" firstAttribute="centerY" secondItem="Mra-3V-8OG" secondAttribute="centerY" id="IaB-ys-zRM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FHS-XL-Swb" secondAttribute="trailing" id="KM3-uc-4FW"/>
+                            <constraint firstItem="8Nx-zr-0bU" firstAttribute="centerY" secondItem="yEl-ju-iOK" secondAttribute="centerY" id="aKs-Ns-1uW"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="FPZ-uk-i6k" secondAttribute="leading" id="gHI-qW-ArB"/>
+                            <constraint firstItem="Vsh-6j-Wb4" firstAttribute="leading" secondItem="Mra-3V-8OG" secondAttribute="leading" id="lZZ-19-HqJ"/>
+                            <constraint firstItem="yEl-ju-iOK" firstAttribute="top" secondItem="Vsh-6j-Wb4" secondAttribute="bottom" constant="8" id="pZL-DJ-vZS"/>
+                            <constraint firstItem="Vsh-6j-Wb4" firstAttribute="top" secondItem="Mra-3V-8OG" secondAttribute="bottom" constant="8" id="tpJ-u9-mCy"/>
+                            <constraint firstItem="Mra-3V-8OG" firstAttribute="top" secondItem="FPZ-uk-i6k" secondAttribute="bottom" constant="8" id="zLp-oH-rK5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ageLabel" destination="yEl-ju-iOK" id="msm-vT-tjt"/>
+                        <outlet property="nameLabel" destination="Mra-3V-8OG" id="6wI-mR-FkE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129" y="120"/>
+        </scene>
+    </scenes>
+</document>
