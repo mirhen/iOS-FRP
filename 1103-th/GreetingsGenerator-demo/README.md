@@ -43,12 +43,12 @@ Here is a suggestion for a possible progression to implement the required functi
   - _observe_ the input in the `greetingsTextField` and the `nameTextField` and _combine_ them
   - use the static function `combineLatest` that you can call on the `Observable` type; here is an (unrelated) example of how you can use `combineLatest` to create the sum of two integer values that you are observing:
 
-      let a: Variable<Int> = ...
-      let b: Variable<Int> = ...
+        let a: Variable<Int> = ...
+        let b: Variable<Int> = ...
 
-      Observable.combineLatest(a.asObservable(), b.asObservable()) { valueA, valueB in
-        return valueA+valueB
-      }
+        Observable.combineLatest(a.asObservable(), b.asObservable()) { valueA, valueB in
+          return valueA+valueB
+        }
   - once you used `combineLatest` to combine the values in the two text fields, you can _bind_ the result to the `greetingsLabel`
 4. create a `Variable<String>` that stores (and emits) the latest value for the predefined greeting
   - the variable's `value` needs to be updated every time a button is pressed (with the predefined greeting that this button represents)
