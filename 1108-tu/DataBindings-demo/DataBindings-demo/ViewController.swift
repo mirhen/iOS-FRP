@@ -17,14 +17,43 @@ enum DataToUpdate: String {
 
 class ViewController: UIViewController {
   
-  var name = "Johnny"
-  var age = 17
+    //    var name: String = "Johnny" {
+    //        didSet {
+    //            nameLabel.text = name
+    //        }
+    //    }
+    //    var age: Int = 17 {
+    //        didSet{
+    //            ageLabel.text = String(age)
+    //        }
+    //    }
+    
+    //Using FRP
+    
+    //making sure that the binding gets deallocated when the view controller gets deallocated(goes away)
+    let disposeBag = DisposeBag()
+    
+    //using let bc name is now and object and the value in the object is changing but not the object itself
+    let name: Variable<String> = Variable("Miriam")
+    let age: Variable<Int> = Variable(16)
+
+    
   
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var ageLabel: UILabel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    //adding the observable for name and age to keep track of the value of the labels.text
+    
+    name.asObservable()
+        .bindTo(nameLabel.rx.text)
+        .addDisposableTo(disposeBag)
+    age.asObservable()
+        .map{ String($0) }
+        .bindTo(ageLabel.rx.text)
+        .addDisposableTo(disposeBag)
   }
   
   @IBAction func changeNameButtonPressed(_ sender: AnyObject) {
@@ -44,9 +73,9 @@ class ViewController: UIViewController {
       if let newValue = alert.textFields?.first?.text {
         switch dataToUpdate {
         case .age:
-          self.age = Int(newValue)!
+          self.age.value = Int(newValue)!
         case .name:
-          self.name = newValue
+          self.name.value = newValue
         }
       }
     }
