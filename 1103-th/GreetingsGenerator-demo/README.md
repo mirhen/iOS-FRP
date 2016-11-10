@@ -38,7 +38,7 @@ Here is a suggestion for a possible progression to implement the required functi
   - you can _observe_ this by using `stateSegmentedControl.rx.value.asObservable()`
   - in order for you to be able to bind the value of this observable to the `greetingsTextField.rx.isEnabled` property, you need to _transform_ the it to the appropriate type
 2. enabling/disabling of the buttons 
-  - use a similar approach as in one, but this time you need to _bind_ to all existing buttons rather than only to one text field
+  - use a similar approach as in 1., but this time you need to _bind_ to all existing buttons rather than only to one text field
 3. display the custom greeting on the `greetingsLabel`
   - _observe_ the input in the `greetingsTextField` and the `nameTextField` and _combine_ them
   - use the static function `combineLatest` that you can call on the `Observable` type; here is an (unrelated) example of how you can use `combineLatest` to create the sum of two integer values that you are observing:
