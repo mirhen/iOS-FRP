@@ -12,12 +12,12 @@ Note that you **can not commit to this repository**! However, you can still and 
 Here are the steps that you need to perform to setup this infrastructure:
 
 1. clone the repository:
-`git clone https://github.com/MakeSchool-18/iOS-MVC`
+`git clone https://github.com/MakeSchool-18/iOS-FRP`
 
-2. create your own repository **on your Github account** named: `iOS-MVC`
+2. create your own repository **on your Github account** named: `iOS-FRP`
 
 3. add this repository as a _remote_ to the local one (note: you need to give a name to the _remote_, e.g. your first name):
-`git remote add <first-name> https://github.com/<github-user>/iOS-MVC.git`
+`git remote add <first-name> https://github.com/<github-user>/iOS-FRP.git`
 
 4. push the repo to the newly created remote:
 `git push -u <first-name> master`
