@@ -12,12 +12,12 @@ Note that you **can not commit to this repository**! However, you can still and 
 Here are the steps that you need to perform to setup this infrastructure:
 
 1. clone the repository:
-`git clone https://github.com/MakeSchool-18/iOS-FRP`
+`git clone https://github.com/MakeSchool-18/iOS-MVC`
 
-2. create your own repository **on your Github account** named: `iOS-FRP`
+2. create your own repository **on your Github account** named: `iOS-MVC`
 
 3. add this repository as a _remote_ to the local one (note: you need to give a name to the _remote_, e.g. your first name):
-`git remote add <first-name> https://github.com/<github-user>/iOS-FRP.git`
+`git remote add <first-name> https://github.com/<github-user>/iOS-MVC.git`
 
 4. push the repo to the newly created remote:
 `git push -u <first-name> master`
@@ -43,6 +43,7 @@ You should get into habit of writing your code so that it's readable for other p
   - `#file` gives you the name of the file that contains the `print` statement
   - `#line` gives you the line inside the file that contains the `print` statement
   - An example for a good print statement could be: `print(#file, #line, #function)`. Sometimes it is helpful to include some context as well, so if there are variables that you need to inspect, just append them to the statement: `print(#file, #line, #function, userName, accountInfo)`
+7. Remove boilerplate code from your files that doesn't do anything for you. For example, when you create a new `UIViewController` subclass, there is usually some generated boilerplate generated for you. Apple means well, but if you don't use this code you should delete it. Examples for this are `didReceiveMemoryWarning()` or the commented version of  `prepare(for segue: UIStoryboardSegue, sender: Any?)`, even `viewDidLoad()` if you don't end up using it. 
 
 
 #### Example
