@@ -15,7 +15,26 @@ class RxOpenWeatherMapAPI {
   // MARK: Public API
   
   func createWeatherObservable(for city: String, temperatureUnit: RxOpenWeatherMapAPI.TemperatureUnit = .fahrenheit) -> Observable<Weather?> {
-    return Observable<Weather?>.just(nil) // just make the compiler happy by creating a default Observable that's always nil
+    
+    guard let url = buildURLForCurrentWeather(for: city, temperatureUnit: temperatureUnit)
+        else {
+            return Observable<Weather?>.just(nil)
+    }
+    
+    let jsonObervable: Observable<Any> = URLSession.shared.rx.json(url: url)
+    let weatherInfoObservable: Observable<[String: Any]?> = jsonObervable.map { (json: Any) in
+        return (json as? [String: Any])
+    }
+    
+    let weatherObservable: Observable<Weather?> = weatherInfoObservable.map { (weatherInfo: [String: Any]?) in
+        if let weatherInfo = weatherInfo {
+            return self.jsonToMaybeWeather(weatherInfo: weatherInfo)
+        }
+        return nil
+    }
+    return weatherObservable
+    .observeOn(MainScheduler.instance)
+    .catchErrorJustReturn(nil)
   }
 
   
@@ -102,7 +121,7 @@ class RxOpenWeatherMapAPI {
   
   // MARK: Types & Constants
   
-  let apiKey = ""
+  let apiKey = "c148ec7685344ccdfa79ddcf044bef4e"
 
   fileprivate let baseURL = "http://api.openweathermap.org/data/2.5"
   
