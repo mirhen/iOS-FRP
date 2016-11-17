@@ -13,6 +13,7 @@ class ViewController: UIViewController, BoardViewDelegate {
   
   var board: Variable<Board> = Variable(Board()) //Board() // model
   weak var boardView: BoardView! // view
+  var addBoard: ((Board) -> ())?
 
   @IBOutlet var currentTurnLabel: UILabel!
   @IBOutlet weak var turnInfoLabel: UILabel!
@@ -49,6 +50,7 @@ class ViewController: UIViewController, BoardViewDelegate {
       boardView.isUserInteractionEnabled = false
       turnInfoLabel.text = "Winner:"
       currentTurnLabel.text = board.value.name(for: winner)
+      addBoard!(board.value)
     }
     else {
       board.value.updatePlayerWithCurrentTurn()
@@ -84,10 +86,23 @@ class ViewController: UIViewController, BoardViewDelegate {
       print("board changed")
     }).addDisposableTo(disposeBag)
     
-    
   }
-  
+    
+    @IBAction func dismiss(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        if board.value.winner() == nil {
+        addBoard!(board.value)
+        }
+    }
+    
+    /*
+     func myAddBoard(board: Board) {
+         self.games.value.append(board)
+     }
+     */
+    
+    
+    
 }
-
 
 

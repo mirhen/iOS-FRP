@@ -23,5 +23,15 @@
  9. `func reduce<T, U>(array: [T], initial: U, combine: (U, T) -> U) -> U`
  10. recursive versions of `map`, `filter` and `reduce` 😏
  */
+func mapIntsToInts(array: [Int], transform: (Int) -> Int) -> [Int] {
+    var returnedArray: [Int] = []
+    
+    
+    return returnedArray
+}
+
+
+
+
 
 
