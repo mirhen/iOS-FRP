@@ -23,7 +23,7 @@ Here are the steps that you need to perform to setup this infrastructure:
 `git push -u <first-name> master`
 
 5. when you want to access new materials now, all you need to do is:
-`git pull`
+`git pull origin master`
 
 6. when you worked on a challenge or a starter project, you can push it to your own remote repository with:
 `git push`
