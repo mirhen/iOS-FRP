@@ -2,6 +2,7 @@
 
 In this project, you are building a small iPhone app to view issues on GitHub.
 
+![RxIssuesViewer](./resources/rxissuesviewer.gif)
 
 ## GitHub Authentication
 
