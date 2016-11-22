@@ -26,4 +26,4 @@ GitHub uses [OAuth](https://developer.github.com/v3/oauth/) for user authenticat
 
 The starter project already contains a `LoginViewController` whose only UI element is a login button. When the users taps this button, they will be forwarded to `https://github.com/login/oauth/authorize` that is opened in a web browser to provide username and password.
 
-After a successful login and authorization for the application, the app receives a `code` from the GitHub API. This code can now be exchanged for an _access token_ that has to be appended to all subsequent API requests.
+After a successful login and authorization for the application, the app receives a `code` from the GitHub API. This code can now be exchanged for an _access token_ that has to be attached to all subsequent API requests.
