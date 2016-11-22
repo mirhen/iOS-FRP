@@ -11,7 +11,7 @@ GitHub uses [OAuth](https://developer.github.com/v3/oauth/) for user authenticat
 #### Setup
 
 1. Go to [www.github.com](www.github.com) and log in with your user.
-2. Click the profil icon on the top right and select **Settings** from the drop down menu.
+2. Click the profile icon on the top right and select **Settings** from the drop down menu.
 3. In the left menu, selected **OAuth applications** that you find in section **Developer settings**. 
 4. Click on the button that is labelled **Register a new application**.
 5. For the **Application name**, enter `RxIssuesViewer`.  
