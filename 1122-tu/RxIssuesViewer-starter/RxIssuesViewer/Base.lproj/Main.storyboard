@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,6 +27,7 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="Om0-ez-FFq"/>
+                                    <segue destination="Xrk-So-yx3" kind="show" identifier="searchSegue" id="kJR-9m-0kn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -38,6 +40,95 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="tu3-5O-sC2">
+            <objects>
+                <viewController id="Xrk-So-yx3" customClass="SearchViewController" customModule="RxIssuesViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="noT-aJ-kuK"/>
+                        <viewControllerLayoutGuide type="bottom" id="dZC-IB-hGT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zAX-Bs-22K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljX-qo-KVO">
+                                <rect key="frame" x="16" y="129" width="226" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 repositories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEc-Zr-bfo">
+                                <rect key="frame" x="16" y="197" width="226" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="LAf-Pw-fz8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👤" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMU-7X-mHB">
+                                <rect key="frame" x="250" y="129" width="109" height="102"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="109" id="nR9-QX-VmS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjy-dE-rNX">
+                                <rect key="frame" x="129" y="238" width="116" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0tC-8M-YIc"/>
+                                </constraints>
+                                <state key="normal" title="See Repositories"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a Github username or orginization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsD-Vj-eIv">
+                                <rect key="frame" x="16" y="53" width="304" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ASh-MS-vRg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e. mirhen" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ilo-ZY-Zvo">
+                                <rect key="frame" x="16" y="82" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ilo-ZY-Zvo" firstAttribute="centerX" secondItem="Jjy-dE-rNX" secondAttribute="centerX" id="2xF-o7-rhX"/>
+                            <constraint firstItem="fsD-Vj-eIv" firstAttribute="leading" secondItem="zAX-Bs-22K" secondAttribute="leadingMargin" id="8Vr-42-ZzA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fsD-Vj-eIv" secondAttribute="trailing" constant="39" id="Ek8-xY-V1a"/>
+                            <constraint firstItem="dZC-IB-hGT" firstAttribute="top" secondItem="Jjy-dE-rNX" secondAttribute="bottom" constant="399" id="Jxg-gJ-UoR"/>
+                            <constraint firstItem="Ilo-ZY-Zvo" firstAttribute="trailing" secondItem="zAX-Bs-22K" secondAttribute="trailingMargin" id="QYh-ju-EXO"/>
+                            <constraint firstItem="Jjy-dE-rNX" firstAttribute="top" secondItem="ZEc-Zr-bfo" secondAttribute="bottom" constant="8" symbolic="YES" id="R7g-IW-fdA"/>
+                            <constraint firstItem="oMU-7X-mHB" firstAttribute="leading" secondItem="ljX-qo-KVO" secondAttribute="trailing" constant="8" symbolic="YES" id="X3h-uQ-63o"/>
+                            <constraint firstItem="ljX-qo-KVO" firstAttribute="top" secondItem="oMU-7X-mHB" secondAttribute="top" id="XAK-g5-VEX"/>
+                            <constraint firstItem="Ilo-ZY-Zvo" firstAttribute="top" secondItem="fsD-Vj-eIv" secondAttribute="bottom" constant="8" symbolic="YES" id="bea-QQ-eP9"/>
+                            <constraint firstItem="oMU-7X-mHB" firstAttribute="leading" secondItem="ZEc-Zr-bfo" secondAttribute="trailing" constant="8" symbolic="YES" id="fts-vo-VyJ"/>
+                            <constraint firstItem="ljX-qo-KVO" firstAttribute="top" secondItem="Ilo-ZY-Zvo" secondAttribute="bottom" constant="17" id="gKB-wk-OYi"/>
+                            <constraint firstItem="Ilo-ZY-Zvo" firstAttribute="leading" secondItem="ljX-qo-KVO" secondAttribute="leading" id="lco-CJ-CHQ"/>
+                            <constraint firstItem="ljX-qo-KVO" firstAttribute="leading" secondItem="ZEc-Zr-bfo" secondAttribute="leading" id="mL9-sR-OOQ"/>
+                            <constraint firstItem="dZC-IB-hGT" firstAttribute="top" secondItem="oMU-7X-mHB" secondAttribute="bottom" constant="436" id="qym-sY-rzJ"/>
+                            <constraint firstItem="fsD-Vj-eIv" firstAttribute="leading" secondItem="Ilo-ZY-Zvo" secondAttribute="leading" id="ruR-j9-EbD"/>
+                            <constraint firstItem="ZEc-Zr-bfo" firstAttribute="top" secondItem="ljX-qo-KVO" secondAttribute="bottom" constant="7" id="zUa-nz-p6k"/>
+                            <constraint firstItem="Ilo-ZY-Zvo" firstAttribute="trailing" secondItem="oMU-7X-mHB" secondAttribute="trailing" id="zfB-Bc-fjZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="repositoriesButton" destination="Jjy-dE-rNX" id="Qwh-YQ-N5F"/>
+                        <outlet property="searchTextField" destination="Ilo-ZY-Zvo" id="Xfu-tt-5kG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bjB-f2-ncv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="825" y="137"/>
         </scene>
     </scenes>
 </document>
